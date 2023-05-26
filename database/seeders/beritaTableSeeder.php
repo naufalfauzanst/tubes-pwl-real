@@ -35,12 +35,12 @@ class beritaTableSeeder extends Seeder
         ];
 
         Storage::move("public/asset/img/$image_name_with_extension", "public/posts/$image_name_with_extension");
+        DB::table('posts')->insert(array_map(function ($post) use ($image_extension) {
+            $post['image'] = pathinfo($post['image'], PATHINFO_FILENAME) . '.' . $image_extension;
+            return $post;
+        }, $posts));
+    
+        }
     }
 
-    DB::table('posts')->insert(array_map(function ($post) use ($image_extension) {
-        $post['image'] = pathinfo($post['image'], PATHINFO_FILENAME) . '.' . $image_extension;
-        return $post;
-    }, $posts));
-
-    }
 }

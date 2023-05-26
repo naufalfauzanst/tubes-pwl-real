@@ -14,10 +14,10 @@ class PostsTableSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('posts')->insert([
-        'name'=> 'farhan',
-        'email' => 'farhan@gmail.com',
-        'password' => 'farhan123'
-    ]);
+    //     DB::table('posts')->insert([
+    //     'name'=> 'farhan',
+    //     'email' => 'farhan@gmail.com',
+    //     'password' => 'farhan123'
+    // ]);
     }
 }

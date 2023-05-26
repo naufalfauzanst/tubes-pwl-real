@@ -95,7 +95,7 @@ Route::middleware('guest')->group(function () {
     Route::post('pengguna/login', [LoginController::class, 'authenticate']);    
     
 });
-Route::post('user/logout', [LoginController::class, 'logout']);
+Route::post('pengguna/logout', [LoginController::class, 'logout']);
 
 
 Route::get('/admin', [AdminController::class, 'index']);
@@ -119,6 +119,6 @@ Route::post('/admin/store_post',[AdminController::class, 'store_post']);
 //     return view('auth.register');
 // });
 Route::resource('kategori', KategoriController::class);
-Route::post('/kategori/tambah', [KategoriController::class, 'store'])->name('store-kategori');
+// Route::post('/kategori/tambah', [KategoriController::class, 'store'])->name('store-kategori');
 
 Route::resource('post', AdminController::class);

@@ -52,7 +52,7 @@ class AdminController extends Controller
             'image'     => 'image|mimes:jpeg,jpg,png|max:4096'
         ]);
 
-        $new_post = new post;
+        $new_post = new berita;
         $new_post -> title     = $request ->title;
         $new_post -> excerpt   = $request ->excerpt;
         $new_post -> content   = $request ->content;

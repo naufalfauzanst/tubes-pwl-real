@@ -17,11 +17,11 @@
                     @endguest
 
                     @auth
-                    <a class="btn btn-custom mx-3 my-3">{{ Auth::user()->username }}</a>
-                    <form action="/pengguna/logout" method="post">
-                        @csrf
-                        <button class="btn btn-outline-custom mx-3 my-3" type="submit">Logout</button>
-                    </form>
+                        <a class="btn btn-custom mx-3 my-3">{{ Auth::user()->username }}</a>
+                        <form action="/pengguna/logout" method="post">
+                            @csrf
+                            <button class="btn btn-outline-custom mx-3 my-3" type="submit">Logout</button>
+                        </form>
                     @endauth
                 </div>
                             

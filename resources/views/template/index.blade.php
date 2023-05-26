@@ -19,6 +19,7 @@
         <script type="text/javascript" src="{{asset('assets/ckeditor/ckeditor.js')}}"></script>
     </head>
     <body>
+        
         @include('template.navbar')
         <div class="container mt-5">
             @yield('carousel')

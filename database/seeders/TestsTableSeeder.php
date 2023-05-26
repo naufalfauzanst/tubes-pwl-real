@@ -12,11 +12,11 @@ class TestsTableSeeder extends Seeder
     */
     public function run(): void
     {
-        DB::table('posts')->insert([
-            'name' => 'farhan',
-            'email' => 'farhan@gmail.com',
-            'password' => '123456'
-        ]);
+        // DB::table('posts')->insert([
+        //     'name' => 'farhan',
+        //     'email' => 'farhan@gmail.com',
+        //     'password' => '123456'
+        // ]);
     }
     
 }
