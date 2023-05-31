@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\berita;
+use App\Models\akuns;
+use App\Models\akun;
+use App\Models\user;
+
 
 
 
@@ -56,6 +60,7 @@ class AdminController extends Controller
         $new_post -> title     = $request ->title;
         $new_post -> excerpt   = $request ->excerpt;
         $new_post -> content   = $request ->content;
+        $new_post -> author_id   = $request ->author_id;
         
 
         if( $request->hasFile('image'))
@@ -79,12 +84,42 @@ class AdminController extends Controller
        return view('admin.pengguna');
     }
 
+    public function tambah_pengguna()
+    {   
+       return view('admin.tambah_pengguna');
+    }
+
+    public function store_users(Request $request)
+    {   
+       
+        $validated = $request->validate([
+            'nama'     => 'required|min:5|max:100',
+            'username' => 'required|min:20|max:150',
+            'email'    => 'required|min:50|max:255',
+            'password' => 'required|min:50|max:255',
+        ]);
+
+       $new_akun = new user;
+       $new_akun -> nama       = $request ->nama;
+       $new_akun -> username   = $request ->username;
+       $new_akun -> email      = $request ->email;
+       $new_akun -> password   = $request ->password;
+       $new_akun -> level      = $request ->user_role;
+        
+
+       
+        $new_akun->save();
+
+        return redirect('/admin/tambah_pengguna')->with('status',"postingan berhasil ditambahkan"); 
+
+    }
+
     public function edit_profil()
     {
        return view('admin.edit_profil');
     }
 
-    /**
+    /**1
      * Store a newly created resource in storage.
      */
     public function store(Request $request)

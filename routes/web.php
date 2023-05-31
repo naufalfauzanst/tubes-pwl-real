@@ -9,7 +9,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\UserController;
+// use App\Http\Controllers\UserController;
 
 
 /*
@@ -102,9 +102,11 @@ Route::get('/admin', [AdminController::class, 'index']);
 Route::get('admin/komentar', [AdminController::class, 'komentar']);
 // Route::get('admin/pengelola_berita', [AdminController::class, 'pengelola_berita']);
 Route::get('admin/pengguna', [AdminController::class, 'pengguna']);
+Route::get('admin/tambah_pengguna', [AdminController::class, 'tambah_pengguna']);
 Route::get('admin/edit_profil', [AdminController::class, 'edit_profil']);
 Route::get('/admin/create_post',[AdminController::class, 'create_post']);
 Route::post('/admin/store_post',[AdminController::class, 'store_post']);
+Route::post('/admin/store_users',[AdminController::class, 'store_users'])->name('store_users');
 // Route::get('/admin/postingan', [AdminController::class, 'show_postingan']);
 // Route::get('/admin', 'AdminController@index')->name('admin');
 
