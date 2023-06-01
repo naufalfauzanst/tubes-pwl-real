@@ -29,7 +29,7 @@
                 <div class="card mx-3 my-3">
                     <div class="card-body">
                         <div class="card-title">
-                            <form action="/pengguna/login" method="post">
+                            <form action="{{route('cklogin')}}" method="post">
                                 @csrf
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
@@ -51,12 +51,12 @@
                         </div>
                     </div>
                     </div>
-                </div>
-                <div class="row-sm">
+                     </div>
+                        <div class="row-sm">
                     <div class="card mx-3 my-3">
                     <div class="card-body">
                         <div class="card-title">
-                        <button type="button" class="btn btn-block btn-link mt-1"><a href="/user/register">Belum memiliki akun? Daftar sekarang!</a></button>
+                        <button type="submit" class="btn btn-block btn-link mt-1"><a href="/user/register">Belum memiliki akun? Daftar sekarang!</a></button>
                         </div>
                     </div>
                     </div>

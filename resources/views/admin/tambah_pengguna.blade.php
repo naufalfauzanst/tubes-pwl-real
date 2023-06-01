@@ -22,19 +22,21 @@
             <div class=" mx-2 my-2 row">
                 <form action="{{route('store_users')}}" method="POST" style="width: 97%;" class="my-login-validation mt-3 ml-3" enctype="multipart/form-data">
                     @csrf
-                    <div class="form-group">
-                        <label class="mt-2" for="username">Username</label>
-                        <input id="username" type="text" class="form-control" name="username" required autofocus>
-                        <div class="invalid-feedback">
-                            Silahkan isi username anda
-                        </div>
-                    </div>
+                  
 
                     <div class="form-group">
                         <label for="name">Nama</label>
                         <input id="name" type="text" class="form-control" name="nama" required autofocus>
                         <div class="invalid-feedback">
                             Ketik nama anda
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="mt-2" for="username">Username</label>
+                        <input id="username" type="text" class="form-control" name="username" required autofocus>
+                        <div class="invalid-feedback">
+                            Silahkan isi username anda
                         </div>
                     </div>
 

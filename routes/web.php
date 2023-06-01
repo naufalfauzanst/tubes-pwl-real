@@ -86,19 +86,20 @@ Route::get('/kriminal', function () {
 // Route::get('user/register', function () {
 //     return view('pengguna.register');
 // });
-Route::middleware('guest')->group(function () {
+// Route::middleware('guest')->group(function () {
     
     Route::get('user/register', [RegisterController::class, 'index']);
     Route::post('user/register', [RegisterController::class,'store']);
 
-    Route::get('pengguna/login', [LoginController::class, 'index']);
-    Route::post('pengguna/login', [LoginController::class, 'authenticate']);    
+    Route::get('/pengguna/login', [LoginController::class, 'index'])->name('login');
+    Route::post('/pengguna/ceklogin', [LoginController::class, 'ceklogin'])->name('cklogin');    
+    Route::get('/admin', [AdminController::class, 'index'])->name('home');
     
-});
+// });
 Route::post('pengguna/logout', [LoginController::class, 'logout']);
 
 
-Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin', [AdminController::class, 'index'])->name('home');
 Route::get('admin/komentar', [AdminController::class, 'komentar']);
 // Route::get('admin/pengelola_berita', [AdminController::class, 'pengelola_berita']);
 Route::get('admin/pengguna', [AdminController::class, 'pengguna']);
